@@ -6,15 +6,16 @@ from email.header import Header
 from school_api import SchoolClient
 
 # 获取变量
-school_url = os.environ.get('sc_url')        # 教务处外网登陆地址
 account = os.environ.get('login_account')    # 教务处登录名
 pw = os.environ.get('password')              # 教务处登录密码
 mail_user = os.environ.get("mail_account")   # 邮箱账号
 mail_pass = os.environ.get("mail_key")       # 邮箱授权码
+year = os.environ.get('score_year')          # 要查询的学年
+term = os.environ.get('score_term')          # 要查询的学期
 
 
 # 注册一个学校
-school = SchoolClient(school_url)
+school = SchoolClient('http://sys-jiaowu.nsmc.edu.cn/default2.aspx')
 # 实例化一个学生用户
 student = school.user_login(account, pw)
 # 获取学生信息
@@ -22,7 +23,7 @@ info_data = student.get_info()
 # 学生信息加格式
 sendmsg1 = ("姓名：{real_name}，院系：{faculty}，班级：{class_name}".format(**info_data))
 # 获取 2020-2021学年 第一学期 成绩
-score_data = student.get_score(score_year='2020-2021', score_term='1')
+score_data = student.get_score(score_year=year, score_term=term)
 # dict转str
 mystr=str(score_data)
 # 定义判断语句

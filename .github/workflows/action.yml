@@ -15,11 +15,12 @@ jobs:
        
      - name: main
        env:
-         sc_url: ${{ secrets.SCHOOL_URL }}
          login_account: ${{ secrets.USERNAME }}
          password: ${{ secrets.PASSWORD }}
          mail_account: ${{ secrets.MAIL_ACCOUNT }}
          mail_key: ${{ secrets.MAIL_KEY }}
+         score_year: ${{ secrets.YEAR }}
+         score_term: ${{ secrets.TERM }}
        run: |
          pip3 install school_api
          python ./score.py
