@@ -18,8 +18,8 @@ jobs:
          sc_url: ${{ secrets.SCHOOL_URL }}
          login_account: ${{ secrets.USERNAME }}
          password: ${{ secrets.PASSWORD }}
-         mail_account: ${{ secrets.mail_account }}
-         mail_password: ${{ secrets.mail_password }}
+         mail_account: ${{ secrets.MAIL_ACCOUNT }}
+         mail_key: ${{ secrets.MAIL_KEY }}
        run: |
          pip3 install school_api
          python ./score.py
