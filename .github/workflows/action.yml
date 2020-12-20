@@ -1,0 +1,25 @@
+name: 'GitHub Actions Score Bot'
+
+on:
+  push:
+  schedule:
+    - cron: '0 21 * * *'
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+     - uses: actions/checkout@v2
+     - name: 'setup python'
+       uses: actions/setup-python@master
+       with: 
+         python-version: 3.7
+    
+    
+         - name: main
+       env:
+        url: ${{ secrets.url }}
+        login_account: ${{ secrets.login_account }}
+        password: ${{ secrets.password }}
+        mail_account: ${{ secrets.mail_account }}
+        mail_key: ${{ secrets.mail_key }}
