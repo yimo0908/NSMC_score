@@ -1,12 +1,10 @@
-name: 'GitHub Actions Score Bot'
+name: 'run'
 
 on:
-  push:
-  schedule:
-    - cron: '0 21 * * *'
+  push
 
 jobs:
-  score:
+  run:
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v2
@@ -14,12 +12,14 @@ jobs:
        uses: actions/setup-python@master
        with: 
          python-version: 3.7
-    
-    
-         - name: main
+       
+     - name: main
        env:
-        url: ${{ secrets.url }}
-        login_account: ${{ secrets.login_account }}
-        password: ${{ secrets.password }}
-        mail_account: ${{ secrets.mail_account }}
-        mail_key: ${{ secrets.mail_key }}
+         sc_url: ${{ secrets.SCHOOL_URL }}
+         login_account: ${{ secrets.USERNAME }}
+         password: ${{ secrets.PASSWORD }}
+         mail_account: ${{ secrets.mail_account }}
+         mail_password: ${{ secrets.mail_password }}
+       run: |
+         pip3 install school_api
+         python ./score.py
