@@ -1,7 +1,9 @@
 name: 'run'
 
 on:
-  push
+  push:
+  schedule:
+    - cron: '0 4 * 1,2,6,7 1'
 
 jobs:
   run:
