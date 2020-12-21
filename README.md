@@ -12,7 +12,7 @@
 
    ![](https://github.com/yimo0908/NSMC_score/blob/main/image/1.png)
 
-<details><summary>根据以下内容，增加6个secret</summary>
+<details><summary>根据折叠内容，增加6个secret</summary>
 
 Name填写`USERNAME`，Value填写 教务系统登录账号（通常为学号）  
 
