@@ -25,7 +25,7 @@ sendmsg1 = ("姓名：{real_name}，院系：{faculty}，班级：{class_name}".
 # 获取 2020-2021学年 第一学期 成绩
 score_data = student.get_score(score_year=year, score_term=term)
 # dict转str
-mystr=str(score_data)
+mystr = str(score_data)
 # 定义判断语句
 panduan = "{'error': '暂无成绩信息'}"
 # 判断
@@ -35,11 +35,12 @@ else:
     # 结构重组
     string = ""
     for i, subject in enumerate(score_data):
-        one_subject = "%s学分:%s成绩%s"%(subject["lesson_name"], subject["credit"], subject["score"])
+        one_subject = "%s学分:%s成绩%s" % (
+            subject["lesson_name"], subject["credit"], subject["score"])
         if subject.get("bkcj") is not None:
-            one_subject += "，补考成绩%s"%(subject["bkcj"])
+            one_subject += "，补考成绩%s" % (subject["bkcj"])
         if subject.get("cxcj") is not None:
-            one_subject += "，重修成绩%s"%(subject["cxcj"])
+            one_subject += "，重修成绩%s" % (subject["cxcj"])
         if i != len(score_data) - 1:
             string += one_subject + ";\n"
         else:
@@ -48,23 +49,23 @@ else:
 # 组合信息
 sendmsg = sendmsg1 + "\n" + sendmsg2
 # 第三方 SMTP 服务
-mail_host = "smtp.qq.com"  #设置服务器
+mail_host = "smtp.qq.com"  # 设置服务器
 
 sender = mail_user
 receivers = [mail_user]  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
- 
+
 message = MIMEText(sendmsg)
 message['From'] = Header("GithubAction", 'utf-8')
-message['To'] =  Header("user", 'utf-8')
- 
+message['To'] = Header("user", 'utf-8')
+
 subject = 'Final Exam Score'
 message['Subject'] = Header(subject, 'utf-8')
- 
- 
+
+
 try:
-    smtpObj = smtplib.SMTP() 
+    smtpObj = smtplib.SMTP()
     smtpObj.connect(mail_host, 25)    # 25 为 SMTP 端口号
-    smtpObj.login(mail_user,mail_pass)  
+    smtpObj.login(mail_user, mail_pass)
     smtpObj.sendmail(sender, receivers, message.as_string())
     print("邮件发送成功")
 except smtplib.SMTPException:
