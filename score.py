@@ -35,7 +35,7 @@ else:
     # 结构重组
     string = ""
     for i, subject in enumerate(score_data):
-        one_subject = "%s学分:%s成绩%s" % (
+        one_subject = "%s：学分%s，成绩%s" % (
             subject["lesson_name"], subject["credit"], subject["score"])
         if subject.get("bkcj") is not None:
             one_subject += "，补考成绩%s" % (subject["bkcj"])
@@ -44,7 +44,7 @@ else:
         if i != len(score_data) - 1:
             string += one_subject + ";\n"
         else:
-            string += one_subject + ";"
+            string += one_subject + "。"
     sendmsg2 = string
 # 组合信息
 sendmsg = sendmsg1 + "\n" + sendmsg2
