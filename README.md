@@ -37,12 +37,6 @@ Name填写`TERM` ，Value填写 要查询的学期（如`1`）
 
 ---
 
-### [腾讯云函数SCF](https://console.cloud.tencent.com/scf/index)的版本
-
-咕
-
----
-
 ## Q&A
 
 ```
