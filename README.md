@@ -20,7 +20,7 @@ Name填写`PASSWORD`，Value填写 教务系统登录密码
 
 Name填写`MAIL_ACCOUNT`，Value填写 QQ邮箱地址（`QQ号@qq.com`）  
 
-Name填写`MAIL_KEY`，Value填写 邮箱授权码  
+Name填写`MAIL_KEY`，Value填写 [POP3/SMTP邮箱授权码](https://service.mail.qq.com/cgi-bin/help?subtype=1&id=28&no=1001256)  
 
 Name填写`YEAR`，Value填写 要查询的学年（如`2020-2021`）  
 
