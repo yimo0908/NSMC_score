@@ -56,3 +56,5 @@ A：原因有很多。
 ##   特别鸣谢
 
 感谢[@dairoot](https://github.com/dairoot)的[school_api](https://github.com/dairoot/school-api)项目
+
+感谢[@LittleNightmare](https://github.com/LittleNightmare)大佬帮忙修改代码
