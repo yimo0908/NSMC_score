@@ -1,4 +1,5 @@
 ![NSMC_score](https://socialify.git.ci/yimo0908/NSMC_score/image?description=1&forks=1&stargazers=1&theme=Light)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fyimo0908%2FNSMC_score.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fyimo0908%2FNSMC_score?ref=badge_shield)
 
 ---
 
@@ -58,3 +59,6 @@ A：原因有很多。
 感谢[@dairoot](https://github.com/dairoot)的[school_api](https://github.com/dairoot/school-api)项目
 
 感谢[@LittleNightmare](https://github.com/LittleNightmare)大佬帮忙修改代码
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fyimo0908%2FNSMC_score.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fyimo0908%2FNSMC_score?ref=badge_large)
