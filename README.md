@@ -1,3 +1,7 @@
+**因学校更换教务系统，该项目失效**
+
+---
+
 ![NSMC_score](https://socialify.git.ci/yimo0908/NSMC_score/image?description=1&forks=1&stargazers=1&theme=Light)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fyimo0908%2FNSMC_score.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fyimo0908%2FNSMC_score?ref=badge_shield)
 
