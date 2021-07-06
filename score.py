@@ -3,51 +3,15 @@ import smtplib
 import os
 from email.mime.text import MIMEText
 from email.header import Header
-from school_api import SchoolClient
 
 # 获取变量
 account = os.environ.get('login_account')    # 教务处登录名
 pw = os.environ.get('password')              # 教务处登录密码
 mail_user = os.environ.get("mail_account")   # 邮箱账号
 mail_pass = os.environ.get("mail_key")       # 邮箱授权码
-year = os.environ.get('score_year')          # 要查询的学年
 term = os.environ.get('score_term')          # 要查询的学期
 
-
-# 注册一个学校
-school = SchoolClient('http://sys-jiaowu.nsmc.edu.cn/default2.aspx')
-# 实例化一个学生用户
-student = school.user_login(account, pw)
-# 获取学生信息
-info_data = student.get_info()
-# 学生信息加格式
-sendmsg1 = ("姓名：{real_name}，院系：{faculty}，班级：{class_name}".format(**info_data))
-# 获取 2020-2021学年 第一学期 成绩
-score_data = student.get_score(score_year=year, score_term=term)
-# dict转str
-mystr = str(score_data)
-# 定义判断语句
-panduan = "{'error': '暂无成绩信息'}"
-# 判断
-if mystr == panduan:
-    sendmsg2 = "别急，成绩还没出"
-else:
-    # 结构重组
-    string = ""
-    for i, subject in enumerate(score_data):
-        one_subject = "%s：学分%s，成绩%s" % (
-            subject["lesson_name"], subject["credit"], subject["score"])
-        if subject.get("bkcj") is not None:
-            one_subject += "，补考成绩%s" % (subject["bkcj"])
-        if subject.get("cxcj") is not None:
-            one_subject += "，重修成绩%s" % (subject["cxcj"])
-        if i != len(score_data) - 1:
-            string += one_subject + ";\n"
-        else:
-            string += one_subject + "。"
-    sendmsg2 = string
-# 组合信息
-sendmsg = sendmsg1 + "\n" + sendmsg2
+sendmsg = ""
 # 第三方 SMTP 服务
 mail_host = "smtp.qq.com"  # 设置服务器
 
