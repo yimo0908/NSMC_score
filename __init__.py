@@ -96,21 +96,20 @@ def get_score(url):
     score_dict = {}
     for i in range(2,25):
         score_table = score_html.xpath('//table[@id="dataList"]/tr[{}]/td//text()'.format(i))
-    
         if len(score_table) == 0:
             break
-        
+        score_table[4] = score_table[4].replace('\r', '').replace('\n', '').replace(' ', '')
         score_dict[i-2] = score_table
-    print(score_dict)
+    return score_dict
     # score_dict为所有成绩列表的字典
 
 
-def output_score(url):
+def output_score(dict):
     """
 	格式化输出成绩
 	调用SMTP发送邮件
 	"""
-    pass
+    print(dict)
 
 
 if __name__ == '__main__':
@@ -124,4 +123,5 @@ if __name__ == '__main__':
             break
         else:
             pass
-    get_score(url)
+    score_dict = get_score(url)
+    output_score(score_dict)
