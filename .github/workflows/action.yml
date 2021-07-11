@@ -24,4 +24,5 @@ jobs:
          score_term: ${{ secrets.TERM }}
        run: |
          pip3 install requests
+         pip3 install lxml
          python ./score.py
