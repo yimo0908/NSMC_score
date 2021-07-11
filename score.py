@@ -111,4 +111,4 @@ def mail(url):
 
 
 if __name__ == '__main__':
-    print(mail(url_wan))
+    mail(url_wan)
