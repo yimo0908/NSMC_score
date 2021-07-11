@@ -9,7 +9,7 @@
 
 1. 点击项目右上角的Fork，Fork此项目
 
-2. 到自己Fork的项目点击Setting → Secrets → New repository secret
+2. 到自己Fork的项目点击Setting → Secrets → New repository secret ![](./image/1.png)
 
 <details><summary>根据折叠内容，增加6个secret</summary>
 
@@ -22,14 +22,14 @@ Name填写`MAIL_ACCOUNT`，Value填写 QQ邮箱地址（`QQ号@qq.com`）
 Name填写`MAIL_KEY`，Value填写 [POP3/SMTP邮箱授权码](https://service.mail.qq.com/cgi-bin/help?subtype=1&id=28&no=1001256)    
 
 Name填写`TERM` ，Value填写 要查询的学期（如`2020-2021-1`）
-![]</details>
+![./image/2.png]</details>
 
 3. 点击`action`，再点击`I understand my workflows,go ahead and enable them`→`run`→`Enable workflow`即可激活自动运行
     默认在1月.2月.6月.7月每周一中午12:00自动查询并发邮件，可自行修改
 
-  ![](https://github.com/yimo0908/NSMC_score/blob/main/image/3.png)
+  ![](./image/3.png)
 
-  ![](https://github.com/yimo0908/NSMC_score/blob/main/image/4.png)
+  ![](./image/4.png)
 
 ---
 
