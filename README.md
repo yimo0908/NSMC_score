@@ -22,7 +22,7 @@ Name填写`MAIL_ACCOUNT`，Value填写 QQ邮箱地址（`QQ号@qq.com`）
 Name填写`MAIL_KEY`，Value填写 [POP3/SMTP邮箱授权码](https://service.mail.qq.com/cgi-bin/help?subtype=1&id=28&no=1001256)    
 
 Name填写`TERM` ，Value填写 要查询的学期（如`2020-2021-1`）
-![./image/2.png]</details>
+![](./image/2.png)</details>
 
 3. 点击`action`，再点击`I understand my workflows,go ahead and enable them`→`run`→`Enable workflow`即可激活自动运行
     默认在1月.2月.6月.7月每周一中午12:00自动查询并发邮件，可自行修改
