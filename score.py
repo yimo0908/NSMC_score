@@ -79,12 +79,18 @@ def get_score(url):
             break
         score_table[4] = score_table[4].replace('\r', '').replace('\n', '').replace('\t', '').replace(' ', '')
         score_dict[i - 2] = score_table
-    a = ""
-    li_1 = [elem[3] for elem in score_dict.values()]
-    li_2 = [elem[11] for elem in score_dict.values()]
-    li_3 = [elem[4] for elem in score_dict.values()]
-    for i in range(len(li_1)):
-        a += ("%s  %s  %s" % (li_1[i], li_2[i], li_3[i])) + "\n"
+    a = "你%s学期的成绩为：\n" % term
+    subject_name = [elem[3] for elem in score_dict.values()]
+    subject_score = [elem[4] for elem in score_dict.values()]
+    if len(score_dict) == 14:
+        exam_property = [elem[11] for elem in score_dict.values()]
+        subject_property = [elem[12] for elem in score_dict.values()]
+    else:
+        exam_property = [elem[10] for elem in score_dict.values()]
+        subject_property = [elem[11] for elem in score_dict.values()]
+    for _ in range(len(subject_name)):
+        a += ("科目：%s    成绩：%s   考试性质：%s   课程属性：%s" % (
+            subject_name[_], subject_score[_], exam_property[_], subject_property[_])) + "\n"
     return a
 
 
